@@ -56,12 +56,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     _size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(150.0),
+        preferredSize: Size.fromHeight(140.0),
         child: AppBar(
           bottom: _bottomNavigationBar(),
-          flexibleSpace: const Image(
-            image: AssetImage('images/cleaning_image_1.jpeg'),
-            fit: BoxFit.cover,
+          flexibleSpace: const SizedBox(
+            height: 100,
+            width: 200,
+            child: Image(
+              image: AssetImage('images/climax_logo.png'),
+              fit: BoxFit.contain,
+            ),
           ),
         ),
       ),
