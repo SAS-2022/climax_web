@@ -18,17 +18,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Climax Cont & Services',
       theme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: Colors.grey[700],
-          fontFamily: 'Georgia',
-          textTheme: const TextTheme(
-              headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-              headline2: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              bodyText1: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
-              bodyText2: TextStyle(
-                  fontSize: 14,
-                  fontStyle: FontStyle.italic,
-                  fontWeight: FontWeight.normal))),
+        brightness: Brightness.dark,
+        primaryColor: Colors.grey[700],
+        fontFamily: 'Georgia',
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          bodyText1: TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
+          bodyText2: TextStyle(
+              fontSize: 14,
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.normal),
+        ),
+      ),
       home: HomePage(),
     );
   }
@@ -90,19 +92,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     ]);
   }
 
-  TabBar _bottomNavigationBar() {
-    return TabBar(
-        labelStyle: Theme.of(context).textTheme.headline2,
-        controller: _tabController,
-        tabs: [
-          //Main Page
-          Tab(text: 'Home'),
-          //About us
-          Tab(text: 'About us'),
-          //Gallery
-          Tab(text: 'Gallery'),
-          //Contact us
-          Tab(text: 'Contact us'),
-        ]);
+  _bottomNavigationBar() {
+    return PreferredSize(
+      preferredSize: _size,
+      child: Container(
+        padding: EdgeInsets.all(5),
+        height: 60,
+        decoration: BoxDecoration(
+          color: Colors.grey[400],
+          borderRadius: BorderRadius.circular(25),
+        ),
+        child: TabBar(
+            labelStyle: Theme.of(context).textTheme.headline2,
+            controller: _tabController,
+            indicator: BoxDecoration(borderRadius: BorderRadius.circular(25)),
+            labelColor: Colors.orange,
+            unselectedLabelColor: Colors.white,
+            tabs: [
+              //Main Page
+              Tab(text: 'Home'),
+              //About us
+              Tab(text: 'About us'),
+              //Gallery
+              Tab(text: 'Gallery'),
+              //Contact us
+              Tab(text: 'Contact us'),
+            ]),
+      ),
+    );
   }
 }

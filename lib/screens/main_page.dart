@@ -16,21 +16,21 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 1), () {
       if (mounted) {
         setState(() {
           _expandServices = true;
         });
       }
     });
-    Future.delayed(Duration(seconds: 4), () {
+    Future.delayed(Duration(seconds: 2), () {
       if (mounted) {
         setState(() {
           _expandVision = true;
         });
       }
     });
-    Future.delayed(Duration(seconds: 6), () {
+    Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
         setState(() {
           _expandProjects = true;
@@ -65,8 +65,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 36,
                         left: _expandServices ? 40 : -250,
-                        curve: Curves.bounceInOut,
-                        duration: Duration(seconds: 1),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
                         child: Text(
                           'Our Services: ',
                           style: Theme.of(context).textTheme.bodyText1,
@@ -76,8 +76,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 16,
                         left: _expandServices ? 60 : -250,
-                        curve: Curves.bounceOut,
-                        duration: Duration(seconds: 3),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
                         child: Text(
                             '''This will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text''',
                             style: Theme.of(context).textTheme.bodyText2),
@@ -97,8 +97,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 36,
                         left: _expandVision ? 40 : -250,
-                        curve: Curves.bounceInOut,
-                        duration: Duration(seconds: 1),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
                         child: Text(
                           'Our Vision:',
                           style: Theme.of(context).textTheme.bodyText1,
@@ -108,8 +108,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 16,
                         left: _expandVision ? 60 : -250,
-                        curve: Curves.bounceOut,
-                        duration: Duration(seconds: 3),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
                         child: Text(
                             '''This will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text''',
                             style: Theme.of(context).textTheme.bodyText2),
@@ -129,8 +129,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 36,
                         left: _expandProjects ? 40 : -250,
-                        curve: Curves.bounceInOut,
-                        duration: Duration(seconds: 1),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
                         child: Text(
                           'Our Vision:',
                           style: Theme.of(context).textTheme.bodyText1,
@@ -140,8 +140,8 @@ class _MainPageState extends State<MainPage> {
                       AnimatedPositioned(
                         top: _size.height / 16,
                         left: _expandProjects ? 60 : -250,
-                        curve: Curves.bounceOut,
-                        duration: Duration(seconds: 3),
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
                         child: Text(
                             '''This will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text''',
                             style: Theme.of(context).textTheme.bodyText2),
