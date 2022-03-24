@@ -15,10 +15,14 @@ class _AboutUsState extends State<AboutUs> {
     'Project 3',
   ];
 
+  ScrollController _aboutUsScrollController = ScrollController();
+  ScrollController _projectsScrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
     return SingleChildScrollView(
+      controller: _aboutUsScrollController,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: SizedBox(
@@ -67,19 +71,20 @@ This is just a small example on how good we are:
               ),
               Center(
                 child: SizedBox(
-                  height: _size.height / 15,
+                  height: _size.height / 5,
                   width: _size.width - 100,
                   child: ListView.builder(
+                      controller: _projectsScrollController,
                       scrollDirection: Axis.horizontal,
                       itemCount: projects.length,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.all(12.0),
+                          padding: const EdgeInsets.all(8.0),
                           child: Container(
                             decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white),
                                 borderRadius: BorderRadius.circular(20)),
-                            height: _size.height / 10,
+                            height: _size.height / 5,
                             width: _size.width / 2,
                             child: Center(
                                 child: Text('${projects[index].toString()}')),

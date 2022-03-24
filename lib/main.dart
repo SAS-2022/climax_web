@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Climax Cont & Services',
       theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.grey[700],
+        brightness: Brightness.light,
+        primaryColor: Colors.white,
         fontFamily: 'Georgia',
         textTheme: const TextTheme(
           headline1: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
@@ -57,47 +57,62 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(140.0),
-        child: AppBar(
-          bottom: _bottomNavigationBar(),
-          flexibleSpace: const SizedBox(
-            height: 100,
-            width: 200,
-            child: Image(
-              image: AssetImage('images/climax_logo.png'),
-              fit: BoxFit.contain,
+      body: SizedBox(
+        height: _size.height,
+        width: _size.width,
+        child: Stack(
+          children: [
+            AppBar(
+              backgroundColor: Colors.white70,
+              flexibleSpace: const SizedBox(
+                height: 100,
+                width: 200,
+                child: Image(
+                  image: AssetImage('images/climax_logo.png'),
+                  fit: BoxFit.contain,
+                ),
+              ),
             ),
-          ),
+            _buildHomePage(),
+            _bottomNavigationBar(),
+          ],
         ),
       ),
-      body: _buildHomePage(),
     );
   }
 
   Widget _buildHomePage() {
-    return TabBarView(controller: _tabController, children: [
-      Center(
-        child: MainPage(),
+    return Positioned(
+      top: _size.height / 4.5,
+      child: SizedBox(
+        height: 3 * _size.height / 4,
+        width: _size.width - 50,
+        child: TabBarView(controller: _tabController, children: [
+          Center(
+            child: MainPage(),
+          ),
+          Center(
+            child: AboutUs(),
+          ),
+          Center(
+            child: Gallery(),
+          ),
+          Center(
+            child: ContactUs(),
+          ),
+        ]),
       ),
-      Center(
-        child: AboutUs(),
-      ),
-      Center(
-        child: Gallery(),
-      ),
-      Center(
-        child: ContactUs(),
-      ),
-    ]);
+    );
   }
 
   _bottomNavigationBar() {
-    return PreferredSize(
-      preferredSize: _size,
+    return Positioned(
+      top: _size.height / 6.3,
+      left: _size.width / 2 - (_size.width / 4),
       child: Container(
         padding: EdgeInsets.all(5),
-        height: 60,
+        height: 40,
+        width: _size.width / 2,
         decoration: BoxDecoration(
           color: Colors.grey[400],
           borderRadius: BorderRadius.circular(25),
