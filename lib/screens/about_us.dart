@@ -61,7 +61,7 @@ that leave our Customers satisfied!
                   '''
 Our Projects
 
-We have successfuly completed a list of projects in Lebanon that have earned the approval and satisfaction of our clients.
+We have successfuly completed a list of projects in Lebanon that have earned us the approval and satisfaction of our clients.
 
 This is just a small example on how good we are:
 
@@ -82,7 +82,8 @@ This is just a small example on how good we are:
                           padding: const EdgeInsets.all(8.0),
                           child: Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.white),
+                                border: Border.all(color: Colors.black),
+                                color: Colors.grey[300],
                                 borderRadius: BorderRadius.circular(20)),
                             height: _size.height / 5,
                             width: _size.width / 2,
