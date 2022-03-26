@@ -66,12 +66,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: AppBar(
                 backgroundColor: Colors.white70,
-                flexibleSpace: const SizedBox(
-                  height: 100,
-                  width: 200,
-                  child: Image(
-                    image: AssetImage('images/climax_logo.png'),
-                    fit: BoxFit.contain,
+                flexibleSpace: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: SizedBox(
+                    height: _size.height / 7,
+                    width: _size.width / 5,
+                    child: const Image(
+                      image: AssetImage('images/climax_logo.png'),
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),

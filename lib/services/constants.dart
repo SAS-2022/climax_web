@@ -14,3 +14,9 @@ TextStyle textStyle3 = const TextStyle(
     fontWeight: FontWeight.bold,
     fontStyle: FontStyle.normal,
     color: Colors.white);
+
+TextStyle textStyle4 = const TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.normal,
+    color: Colors.black);
