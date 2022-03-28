@@ -386,7 +386,9 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                 ),
                 //Contact information
                 SizedBox(
-                  width: _size.width / 2 - 50,
+                  width: _size.width > 1500
+                      ? _size.width / 2 - 50
+                      : _size.width / 3 - 25,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -396,28 +398,28 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'You can also contact us at:',
-                          style: textStyle4,
+                          style: _size.width > 1500 ? textStyle4 : textStyle5,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Contact: Ragheb Daou',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Mobile: +961 3324127',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Email: ccs.org@hotmail.com',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                       SizedBox(
@@ -425,13 +427,13 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                       ),
                       Text(
                         'Opening hours: ',
-                        style: textStyle4,
+                        style: _size.width > 1500 ? textStyle4 : textStyle5,
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Monday - Friday: 9 am to 5 pm',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                       SizedBox(
@@ -441,7 +443,7 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'Saturday: 10 am to 4 pm',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                       SizedBox(
@@ -451,7 +453,7 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           'We are closed on Sundays',
-                          style: textStyle2,
+                          style: _size.width > 1500 ? textStyle2 : textStyle6,
                         ),
                       ),
                     ],

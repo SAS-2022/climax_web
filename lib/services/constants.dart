@@ -20,3 +20,15 @@ TextStyle textStyle4 = const TextStyle(
     fontWeight: FontWeight.bold,
     fontStyle: FontStyle.normal,
     color: Colors.black);
+
+TextStyle textStyle5 = const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.normal,
+    color: Colors.black);
+
+TextStyle textStyle6 = const TextStyle(
+    fontSize: 10,
+    fontWeight: FontWeight.normal,
+    fontStyle: FontStyle.italic,
+    color: Colors.black);
