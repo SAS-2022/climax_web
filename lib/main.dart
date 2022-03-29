@@ -3,6 +3,7 @@ import 'package:climax_web_page/screens/contact_us.dart';
 import 'package:climax_web_page/screens/gallery.dart';
 import 'package:climax_web_page/screens/main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -46,10 +47,26 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late Size _size;
   late TabController _tabController;
+  bool _showLogo1 = false;
+  bool _showLogo2 = false;
 
   @override
   void initState() {
     _tabController = TabController(length: 4, vsync: this);
+    Future.delayed(Duration(seconds: 1), () {
+      if (mounted) {
+        setState(() {
+          _showLogo1 = true;
+        });
+      }
+    });
+    Future.delayed(Duration(seconds: 1), () {
+      if (mounted) {
+        setState(() {
+          _showLogo2 = true;
+        });
+      }
+    });
     super.initState();
   }
 
@@ -69,11 +86,39 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 flexibleSpace: Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: SizedBox(
-                    height: _size.height / 7,
-                    width: _size.width / 5,
-                    child: const Image(
-                      image: AssetImage('images/climax_logo.png'),
-                      fit: BoxFit.contain,
+                    width: _size.width,
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        AnimatedPositioned(
+                          height: _size.height / 6,
+                          width: _size.width / 5,
+                          top: _showLogo1 ? 30 : -200,
+                          left: 100,
+                          duration: Duration(seconds: 4),
+                          curve: Curves.elasticInOut,
+                          child: const Image(
+                              image: AssetImage('images/logo/ccs_logo-03.png'),
+                              fit: BoxFit.fill),
+                        ),
+                        Positioned(
+                          height: _size.height / 4,
+                          width: _size.width * 0.4,
+                          top: 6,
+                          left: (_size.width / 2) - (_size.width * 0.4 / 2),
+                          child: AnimatedOpacity(
+                            opacity: _showLogo2 ? 1.0 : 0.0,
+                            duration: Duration(milliseconds: 750),
+                            child: FadeInImage.memoryNetwork(
+                              fadeInDuration: Duration(seconds: 4),
+                              fadeInCurve: Curves.slowMiddle,
+                              placeholder: kTransparentImage,
+                              image: 'images/logo/ccs_logo-02.png',
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -89,9 +134,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   Widget _buildHomePage() {
     return Positioned(
-      top: _size.height / 4.5,
+      top: _size.height / 3.5,
       child: SizedBox(
-        height: 3 * _size.height / 4,
+        height: _size.height * 0.73,
         width: _size.width - 50,
         child: TabBarView(controller: _tabController, children: [
           Center(
@@ -113,7 +158,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   _bottomNavigationBar() {
     return Positioned(
-      top: _size.height / 6.3,
+      top: _size.height / 4.2,
       left: _size.width / 2 - (_size.width / 4),
       child: Container(
         padding: EdgeInsets.all(5),

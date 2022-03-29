@@ -44,164 +44,161 @@ class _MainPageState extends State<MainPage> {
     _size = MediaQuery.of(context).size;
 
     //this will be the content of the home page
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SizedBox(
-          width: _size.width,
-          height: _size.height,
-          child: Card(
-            color: Colors.grey[200],
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                //Our service
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: SizedBox(
-                    height: _size.height / 4,
-                    child: Stack(
-                      children: [
-                        //Title
-                        AnimatedPositioned(
-                          top: _size.height / 36,
-                          left: _expandServices ? 40 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 650),
-                          child: Text(
-                            'Our Services: ',
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
+    return SizedBox(
+      width: _size.width,
+      height: _size.height * 0.70,
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Our service
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                  height: _size.height / 4,
+                  child: Stack(
+                    children: [
+                      //Title
+                      AnimatedPositioned(
+                        top: _size.height / 36,
+                        left: _expandServices ? 40 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
+                        child: Text(
+                          'Our Services: ',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        //Text
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          left: _expandServices ? 60 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 850),
-                          child: Text(
-                              '''This will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text''',
-                              style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Text
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        left: _expandServices ? 60 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
+                        child: Text(
+                            '''This will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text\n\nThis will be the services text''',
+                            style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Image showing our services
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        right: _expandServices ? 100 : -_size.width,
+                        curve: Curves.decelerate,
+                        duration: Duration(milliseconds: 1550),
+                        child: Container(
+                          height: _size.height / 4 - 100,
+                          width: _size.width / 3,
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                              child: Text('An Image will be displayed here')),
                         ),
-                        //Image showing our services
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          right: _expandServices ? 100 : -_size.width,
-                          curve: Curves.decelerate,
-                          duration: Duration(milliseconds: 1550),
-                          child: Container(
-                            height: _size.height / 4 - 100,
-                            width: _size.width / 3,
-                            decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(25)),
-                            child: Center(
-                                child: Text('An Image will be displayed here')),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
 
-                //Our vision
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: SizedBox(
-                    height: _size.height / 4,
-                    child: Stack(
-                      children: [
-                        AnimatedPositioned(
-                          top: _size.height / 36,
-                          left: _expandVision ? 40 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 650),
-                          child: Text(
-                            'Our Vision:',
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
+              //Our vision
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                  height: _size.height / 4,
+                  child: Stack(
+                    children: [
+                      AnimatedPositioned(
+                        top: _size.height / 36,
+                        left: _expandVision ? 40 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
+                        child: Text(
+                          'Our Vision:',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        //Text for vision
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          left: _expandVision ? 60 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 850),
-                          child: Text(
-                              '''This will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text''',
-                              style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Text for vision
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        left: _expandVision ? 60 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
+                        child: Text(
+                            '''This will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text\n\nThis will be the vision text''',
+                            style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Image showing our vision
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        right: _expandVision ? 100 : -_size.width,
+                        curve: Curves.decelerate,
+                        duration: Duration(milliseconds: 1550),
+                        child: Container(
+                          height: _size.height / 4 - 100,
+                          width: _size.width / 3,
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                              child: Text('An Image will be displayed here')),
                         ),
-                        //Image showing our vision
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          right: _expandVision ? 100 : -_size.width,
-                          curve: Curves.decelerate,
-                          duration: Duration(milliseconds: 1550),
-                          child: Container(
-                            height: _size.height / 4 - 100,
-                            width: _size.width / 3,
-                            decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(25)),
-                            child: Center(
-                                child: Text('An Image will be displayed here')),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
+              ),
 
-                //Our projects
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: SizedBox(
-                    height: _size.height / 4,
-                    child: Stack(
-                      children: [
-                        AnimatedPositioned(
-                          top: _size.height / 36,
-                          left: _expandProjects ? 40 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 650),
-                          child: Text(
-                            'Our Projects:',
-                            style: Theme.of(context).textTheme.bodyText1,
-                          ),
+              //Our projects
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: SizedBox(
+                  height: _size.height / 4,
+                  child: Stack(
+                    children: [
+                      AnimatedPositioned(
+                        top: _size.height / 36,
+                        left: _expandProjects ? 40 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 650),
+                        child: Text(
+                          'Our Projects:',
+                          style: Theme.of(context).textTheme.bodyText1,
                         ),
-                        //Text for Projects
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          left: _expandProjects ? 60 : -250,
-                          curve: Curves.easeIn,
-                          duration: Duration(milliseconds: 850),
-                          child: Text(
-                              '''This will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text''',
-                              style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Text for Projects
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        left: _expandProjects ? 60 : -250,
+                        curve: Curves.easeIn,
+                        duration: Duration(milliseconds: 850),
+                        child: Text(
+                            '''This will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text\n\nThis will be the Project text''',
+                            style: Theme.of(context).textTheme.bodyText2),
+                      ),
+                      //Image showing our projects
+                      AnimatedPositioned(
+                        top: _size.height / 16,
+                        right: _expandProjects ? 100 : -_size.width,
+                        curve: Curves.decelerate,
+                        duration: Duration(milliseconds: 1550),
+                        child: Container(
+                          height: _size.height / 4 - 100,
+                          width: _size.width / 3,
+                          decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(25)),
+                          child: Center(
+                              child: Text('An Image will be displayed here')),
                         ),
-                        //Image showing our projects
-                        AnimatedPositioned(
-                          top: _size.height / 16,
-                          right: _expandProjects ? 100 : -_size.width,
-                          curve: Curves.decelerate,
-                          duration: Duration(milliseconds: 1550),
-                          child: Container(
-                            height: _size.height / 4 - 100,
-                            width: _size.width / 3,
-                            decoration: BoxDecoration(
-                                border: Border.all(),
-                                borderRadius: BorderRadius.circular(25)),
-                            child: Center(
-                                child: Text('An Image will be displayed here')),
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

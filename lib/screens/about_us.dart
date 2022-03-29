@@ -21,13 +21,13 @@ class _AboutUsState extends State<AboutUs> {
   @override
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      controller: _aboutUsScrollController,
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SizedBox(
-          width: _size.width,
-          height: _size.height,
+    return SizedBox(
+      width: _size.width,
+      height: _size.height * 0.70,
+      child: SingleChildScrollView(
+        controller: _aboutUsScrollController,
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,

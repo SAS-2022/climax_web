@@ -32,13 +32,14 @@ class _ContactUsState extends State<ContactUs> {
   @override
   Widget build(BuildContext context) {
     _size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Form(
-        key: _formKey,
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: SizedBox(
-            width: _size.width - 150,
+    return SizedBox(
+      width: _size.width,
+      height: _size.height * 0.70,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +59,6 @@ We are looking forward to hearing from you, please don't hesistate in contacting
                     ),
 
                     SizedBox(
-                      height: _size.height,
                       width: _size.width / 3,
                       child: Stack(
                         children: [
