@@ -16,21 +16,21 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(Duration(milliseconds: 650), () {
       if (mounted) {
         setState(() {
           _expandServices = true;
         });
       }
     });
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(milliseconds: 1450), () {
       if (mounted) {
         setState(() {
           _expandVision = true;
         });
       }
     });
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(milliseconds: 2250), () {
       if (mounted) {
         setState(() {
           _expandProjects = true;

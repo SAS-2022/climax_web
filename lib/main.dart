@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           width: _size.width / 5,
                           top: _showLogo1 ? 30 : -200,
                           left: 100,
-                          duration: Duration(seconds: 4),
+                          duration: Duration(seconds: 5),
                           curve: Curves.elasticInOut,
                           child: const Image(
                               image: AssetImage('images/logo/ccs_logo-03.png'),
